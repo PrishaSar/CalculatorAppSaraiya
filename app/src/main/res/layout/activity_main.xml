@@ -4,21 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/margin_all"
+    android:layout_margin="0dp"
+    android:background="@color/material_dynamic_primary90"
+    android:backgroundTint="@color/material_dynamic_primary90"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/add5"
+        android:id="@+id/factorial"
         android:layout_width="55dp"
         android:layout_height="49dp"
         android:layout_marginTop="12dp"
-        android:text="+"
+        android:text="!"
         android:textColorLink="@color/md_theme_light_tertiary"
         app:cornerRadius="200dp"
         app:iconPadding="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/add"
+        app:layout_constraintBottom_toTopOf="@+id/editTextInput2"
+        app:layout_constraintTop_toBottomOf="@+id/multiply"
+        app:layout_constraintVertical_bias="0.062"
         app:rippleColor="@color/md_theme_dark_tertiaryContainer"
-        tools:layout_editor_absoluteX="203dp" />
+        tools:layout_editor_absoluteX="206dp" />
+
+    <Button
+        android:id="@+id/subtract"
+        android:layout_width="55dp"
+        android:layout_height="49dp"
+        android:layout_margin="@dimen/margin_all"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:text="-"
+        android:textColorLink="@color/md_theme_light_tertiary"
+        app:cornerRadius="200dp"
+        app:iconPadding="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/multiply"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInput1"
+        app:rippleColor="@color/md_theme_dark_tertiaryContainer" />
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="55dp"
+        android:layout_height="49dp"
+        android:layout_margin="@dimen/margin_all"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="12dp"
+        android:text="X"
+        android:textColorLink="@color/md_theme_light_tertiary"
+        app:cornerRadius="200dp"
+        app:iconPadding="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/divide"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInput1"
+        app:rippleColor="@color/md_theme_dark_tertiaryContainer" />
+
+    <Button
+        android:id="@+id/divide"
+        android:layout_width="55dp"
+        android:layout_height="49dp"
+        android:layout_margin="@dimen/margin_all"
+        android:text="/"
+        android:textColorLink="@color/md_theme_light_tertiary"
+        app:cornerRadius="200dp"
+        app:iconPadding="5dp"
+        app:rippleColor="@color/md_theme_dark_tertiaryContainer"
+        tools:layout_editor_absoluteX="273dp"
+        tools:layout_editor_absoluteY="368dp" />
 
     <Button
         android:id="@+id/add"
@@ -30,63 +77,22 @@
         android:textColorLink="@color/md_theme_light_tertiary"
         app:cornerRadius="200dp"
         app:iconPadding="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/add3"
+        app:layout_constraintEnd_toStartOf="@+id/subtract"
         app:rippleColor="@color/md_theme_dark_tertiaryContainer"
-        tools:layout_editor_absoluteY="398dp" />
+        tools:layout_editor_absoluteY="368dp" />
 
     <Button
-        android:id="@+id/add4"
-        android:layout_width="55dp"
-        android:layout_height="49dp"
-        android:layout_margin="@dimen/margin_all"
-        android:layout_marginEnd="16dp"
-        android:text="+"
-        android:textColorLink="@color/md_theme_light_tertiary"
-        app:cornerRadius="200dp"
-        app:iconPadding="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/add"
-        app:rippleColor="@color/md_theme_dark_tertiaryContainer"
-        tools:layout_editor_absoluteY="398dp" />
-
-    <Button
-        android:id="@+id/add3"
-        android:layout_width="55dp"
-        android:layout_height="49dp"
-        android:layout_margin="@dimen/margin_all"
-        android:text="+"
-        android:textColorLink="@color/md_theme_light_tertiary"
-        app:cornerRadius="200dp"
-        app:iconPadding="5dp"
-        app:rippleColor="@color/md_theme_dark_tertiaryContainer"
-        tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="398dp" />
-
-    <Button
-        android:id="@+id/add2"
-        android:layout_width="55dp"
-        android:layout_height="49dp"
-        android:layout_margin="@dimen/margin_all"
-        android:layout_marginEnd="16dp"
-        android:text="+"
-        android:textColorLink="@color/md_theme_light_tertiary"
-        app:cornerRadius="200dp"
-        app:iconPadding="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/add4"
-        app:rippleColor="@color/md_theme_dark_tertiaryContainer"
-        tools:layout_editor_absoluteY="398dp" />
-
-    <Button
-        android:id="@+id/add8"
+        android:id="@+id/identity"
         android:layout_width="55dp"
         android:layout_height="49dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:text="+"
+        android:text="="
         android:textColorLink="@color/md_theme_light_tertiary"
         app:cornerRadius="200dp"
         app:iconPadding="5dp"
-        app:layout_constraintStart_toEndOf="@+id/add5"
-        app:layout_constraintTop_toBottomOf="@+id/add3"
+        app:layout_constraintStart_toEndOf="@+id/factorial"
+        app:layout_constraintTop_toBottomOf="@+id/divide"
         app:rippleColor="@color/md_theme_dark_tertiaryContainer" />
 
     <Button
@@ -99,22 +105,24 @@
         android:textColorLink="@color/md_theme_light_tertiary"
         app:cornerRadius="200dp"
         app:iconPadding="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/add2"
+        app:layout_constraintTop_toBottomOf="@+id/add"
         app:rippleColor="@color/md_theme_dark_tertiaryContainer"
         tools:layout_editor_absoluteX="64dp" />
 
     <Button
-        android:id="@+id/add6"
-        android:layout_width="55dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="12dp"
+        android:id="@+id/absolute"
+        android:layout_width="56dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:text="+"
+        android:text="||"
         android:textColorLink="@color/md_theme_light_tertiary"
         app:cornerRadius="200dp"
         app:iconPadding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextInput2"
         app:layout_constraintStart_toEndOf="@+id/exponent"
-        app:layout_constraintTop_toBottomOf="@+id/add4"
+        app:layout_constraintTop_toBottomOf="@+id/subtract"
+        app:layout_constraintVertical_bias="0.038"
         app:rippleColor="@color/md_theme_dark_tertiaryContainer" />
 
     <TextView
@@ -130,44 +138,43 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <EditText
         android:id="@+id/editTextInput1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="333dp" />
+        android:hint="@string/Enterprompt"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Output" />
 
     <EditText
         android:id="@+id/editTextInput2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="558dp" />
+        android:hint="@string/Enterprompt"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="510dp" />
 
     <TextView
         android:id="@+id/Output"
         android:layout_width="280dp"
         android:layout_height="161dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/md_theme_dark_primary"
         android:text=""
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="101dp" />
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GO!"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="639dp" />
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        tools:layout_editor_absoluteX="65dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
