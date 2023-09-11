@@ -11,10 +11,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
+    private String his;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        his = "";
     }
 
     public void Calculate(View v){
@@ -22,16 +25,17 @@ public class MainActivity extends AppCompatActivity{
         EditText in1 = findViewById(R.id.editTextInput1);
         EditText in2 = findViewById(R.id.editTextInput2);
 
-        int int1 = Integer.valueOf(in1.getText().toString());
-        int int2 = Integer.valueOf(in2.getText().toString());
+        String i1 = checkNull(in1.getText().toString());
+        String i2 = checkNull(in2.getText().toString());
+
+        int int1 = Integer.valueOf(i1);
+        int int2 = Integer.valueOf(i2);
 
         String ans = int1 + "";
 
-        double fin = 0;
+        double fin = 1;
 
-        int1 = checkNull(int1);
         if(v.getId()==R.id.add){
-            int2 = checkNull(int2);
             fin = int1 + int2;
             ans += " + " + int2;
         }
@@ -40,7 +44,6 @@ public class MainActivity extends AppCompatActivity{
             ans = "|" + ans + "|";
         }
         if(v.getId()==R.id.divide){
-            int2 = checkNull(int2);
             if(int2 == 0){
                 int2 = 1;
             }
@@ -48,23 +51,20 @@ public class MainActivity extends AppCompatActivity{
             ans += " / " + int2;
         }
         if(v.getId()==R.id.subtract){
-            int2 = checkNull(int2);
             fin = int1 - int2;
             ans += " - " + int2;
         }
         if(v.getId()==R.id.multiply){
-            int2 = checkNull(int2);
             fin = int1 * int2;
             ans += " X " + int2;
         }
         if(v.getId()==R.id.factorial){
-            for(int l = int1; l <= int1; l++){
+            for(int l = 2; l <= int1; l++){
                 fin = fin * l;
             }
             ans += "!";
         }
         if(v.getId()==R.id.exponent){
-            int2 = checkNull(int2);
             fin = Math.pow(int1, int2);
             ans += " ^ " + int2;
         }
@@ -75,15 +75,21 @@ public class MainActivity extends AppCompatActivity{
         ans += " = ";
         TextView out = findViewById(R.id.Output);
         ans += String.valueOf(fin);
+        his += ans + "\n";
         out.setText(ans);
 
     }
 
-    public int checkNull(int n){
-        if(isNull(n)){
-            return 0;
+    public String checkNull(String n){
+        if(n.matches("")){
+            return "1";
         }
         return n;
+    }
+
+
+    public void showHistory(View v){
+
     }
 
 
