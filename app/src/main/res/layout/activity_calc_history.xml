@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/material_dynamic_primary90"
+    android:padding="@dimen/padding_all"
     tools:context=".CalcHistory">
 
     <Button
@@ -12,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="24dp"
-        android:text="← Back"
         android:onClick="continueCalc"
+        android:text="← Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -21,9 +23,11 @@
         android:id="@+id/calcHistory"
         android:layout_width="365dp"
         android:layout_height="64dp"
+        android:layout_margin="@dimen/margin_all"
         android:background="@color/md_theme_dark_primary"
         android:gravity="center"
         android:text="No History Yet"
+        android:textSize="@dimen/answer_fontSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
