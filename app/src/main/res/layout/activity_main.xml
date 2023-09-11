@@ -163,7 +163,7 @@
     <EditText
         android:id="@+id/editTextInput1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/editTextHeight"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/Enterprompt"
@@ -176,7 +176,7 @@
     <EditText
         android:id="@+id/editTextInput2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/editTextHeight"
         android:layout_marginBottom="144dp"
         android:ems="10"
         android:hint="@string/Enterprompt"
@@ -204,6 +204,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
+        android:onClick="showHistory"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

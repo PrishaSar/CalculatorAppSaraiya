@@ -5,4 +5,5 @@
     <dimen name = "padding_all">10dp</dimen>
     <dimen name = "answer_fontSize">18sp</dimen>
     <dimen name = "input_fontSize">20sp</dimen>
+    <dimen name = "editTextHeight">48dp</dimen>
 </resources>
