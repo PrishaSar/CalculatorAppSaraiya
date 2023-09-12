@@ -148,10 +148,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.06" />
 
     <EditText
         android:id="@+id/editTextInput1"
@@ -187,6 +186,7 @@
         android:background="@color/md_theme_dark_primary"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appName" />
 
@@ -207,11 +207,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_all"
         android:background="@color/md_theme_light_tertiaryContainer"
         android:fontFamily="@font/advent_pro"
         android:gravity="center_horizontal"
         android:text="Instructions: Enter the numbers first, then the operations.\n For example, if you want to calculate 1+2, enter 1 in the \n box and 2 in the second. Then press the '+' sign."
-        android:textSize="18sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
