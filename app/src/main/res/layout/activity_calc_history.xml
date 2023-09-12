@@ -19,19 +19,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/calcHistory"
-        android:layout_width="365dp"
-        android:layout_height="64dp"
-        android:layout_margin="@dimen/margin_all"
-        android:background="@color/md_theme_dark_primary"
-        android:gravity="center"
-        android:text="No History Yet"
-        android:textSize="@dimen/answer_fontSize"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ScrollView
+        android:layout_width="329dp"
+        android:layout_height="533dp"
+        app:layout_constraintBottom_toTopOf="@+id/switchBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hello"
+                android:textAllCaps="true"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
