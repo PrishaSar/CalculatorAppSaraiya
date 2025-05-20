@@ -3,6 +3,7 @@ package com.example.calculatorappsaraiya;
 import static java.util.Objects.isNull;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,12 +15,65 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity{
 
     private String his;
+    private TextView outputView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         his = "";
+        outputView = findViewById(R.id.Output);
+    }
+
+    public void onDigitInput(View view) {
+        EditText input = (EditText) view;
+        String text = input.getText().toString();
+        if (!text.isEmpty()) {
+            char lastChar = text.charAt(text.length() - 1);
+            if (Character.isDigit(lastChar)) {
+                int digit = Character.getNumericValue(lastChar);
+                changeScreenColor(digit);
+            }
+        }
+    }
+
+    private void changeScreenColor(int digit) {
+        int colorResId;
+        switch (digit) {
+            case 0:
+                colorResId = R.color.digit_0;
+                break;
+            case 1:
+                colorResId = R.color.digit_1;
+                break;
+            case 2:
+                colorResId = R.color.digit_2;
+                break;
+            case 3:
+                colorResId = R.color.digit_3;
+                break;
+            case 4:
+                colorResId = R.color.digit_4;
+                break;
+            case 5:
+                colorResId = R.color.digit_5;
+                break;
+            case 6:
+                colorResId = R.color.digit_6;
+                break;
+            case 7:
+                colorResId = R.color.digit_7;
+                break;
+            case 8:
+                colorResId = R.color.digit_8;
+                break;
+            case 9:
+                colorResId = R.color.digit_9;
+                break;
+            default:
+                colorResId = R.color.md_theme_dark_primary;
+        }
+        outputView.setBackgroundColor(ContextCompat.getColor(this, colorResId));
     }
 
     public void Calculate(View v){
@@ -75,11 +129,8 @@ public class MainActivity extends AppCompatActivity{
         }
 
         ans += " = ";
-        TextView out = findViewById(R.id.Output);
-        ans += String.valueOf(fin);
+        outputView.setText(ans);
         his += ans + "\n";
-        out.setText(ans);
-
     }
 
     public String checkNull(String n){
